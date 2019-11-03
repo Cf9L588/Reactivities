@@ -1,3 +1,9 @@
 {
-    "csharpextensions.privateMemberPrefix": "_"
+    "csharpextensions.privateMemberPrefix": "_",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
