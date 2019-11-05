@@ -1,16 +1,18 @@
-import React, {useState, useEffect, Fragment, SyntheticEvent} from 'react';
+import React, {useState, useEffect, Fragment, SyntheticEvent, useContext} from 'react';
 import { Container} from 'semantic-ui-react';
 import { IActivity } from '../models/activity';
 import Navbar from '../../features/nav/Navbar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 import agent from '../api/agent';
 import LoadingComponent from './LoadingComponent';
+import ActivityStore from '../stores/activityStore';
 
 interface IState{
   activities: IActivity[]
 }
 
 const App = () =>  {
+  const activityStore = useContext(ActivityStore)
   const [activities, setActivities] = useState<IActivity[]>([]);
   const [selectedActivity, setSelectedActivity] = useState<IActivity | null>(null);
   const [editMode, setEditMode] = useState(false);
